@@ -1,4 +1,3 @@
-````markdown
 # Connected Vehicles Data Engineering Platform
 
 ## Project Overview
@@ -233,7 +232,7 @@ Connected-Vehicles-Data-Engineering/
 
 ## Author
 
-Shivam
+Anoop Kumar Singh
 Data Engineer Portfolio Project
 
 ```

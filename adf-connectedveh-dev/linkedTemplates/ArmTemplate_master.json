@@ -1,0 +1,91 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-connectedveh-dev"
+		},
+		"ls_http_github_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_http_github'"
+		},
+		"ls_http_mockaroo_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_http_mockaroo'"
+		},
+		"ls_adls_connectedveh_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsconnectedvehdev.dfs.core.windows.net/"
+		},
+		"ls_http_github_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com/"
+		},
+		"ls_http_github_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin"
+		},
+		"ls_http_mockaroo_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://api.mockaroo.com"
+		},
+		"ls_http_mockaroo_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf-connectedveh-dev_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_http_github_password": {
+						"value": "[parameters('ls_http_github_password')]"
+					},
+					"ls_http_mockaroo_password": {
+						"value": "[parameters('ls_http_mockaroo_password')]"
+					},
+					"ls_adls_connectedveh_properties_typeProperties_url": {
+						"value": "[parameters('ls_adls_connectedveh_properties_typeProperties_url')]"
+					},
+					"ls_http_github_properties_typeProperties_url": {
+						"value": "[parameters('ls_http_github_properties_typeProperties_url')]"
+					},
+					"ls_http_github_properties_typeProperties_userName": {
+						"value": "[parameters('ls_http_github_properties_typeProperties_userName')]"
+					},
+					"ls_http_mockaroo_properties_typeProperties_url": {
+						"value": "[parameters('ls_http_mockaroo_properties_typeProperties_url')]"
+					},
+					"ls_http_mockaroo_properties_typeProperties_userName": {
+						"value": "[parameters('ls_http_mockaroo_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

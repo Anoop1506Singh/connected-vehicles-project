@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-connectedveh-dev"
+		},
+		"ls_http_github_password": {
+			"value": ""
+		},
+		"ls_http_mockaroo_password": {
+			"value": ""
+		},
+		"ls_adls_connectedveh_properties_typeProperties_url": {
+			"value": "https://adlsconnectedvehdev.dfs.core.windows.net/"
+		},
+		"ls_http_github_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/"
+		},
+		"ls_http_github_properties_typeProperties_userName": {
+			"value": "admin"
+		},
+		"ls_http_mockaroo_properties_typeProperties_url": {
+			"value": "https://api.mockaroo.com"
+		},
+		"ls_http_mockaroo_properties_typeProperties_userName": {
+			"value": "admin"
+		}
+	}
+}

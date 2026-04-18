@@ -1,0 +1,9 @@
+{
+	"name": "adf-connectedveh-dev",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e327a0ae-b840-4a1e-9a73-bfa553b658e9",
+		"tenantId": "8715b396-97f1-4f12-9c3f-ee70dedce4f1"
+	}
+}

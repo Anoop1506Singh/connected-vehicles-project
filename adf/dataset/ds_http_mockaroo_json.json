@@ -1,0 +1,19 @@
+{
+	"name": "ds_http_mockaroo_json",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_http_mockaroo",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "/api/b94e3680?count=100&key=f10650c0"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

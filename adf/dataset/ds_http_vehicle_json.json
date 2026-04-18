@@ -1,0 +1,19 @@
+{
+	"name": "ds_http_vehicle_json",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_http_github",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "Anoop1506Singh/connected-vehicles-project/refs/heads/main/data/source/vehicle_telemetry.json"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
